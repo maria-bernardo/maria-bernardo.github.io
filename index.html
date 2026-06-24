@@ -129,6 +129,40 @@
             line-height: 1.6;
         }
 
+        /* Sección de Política de Privacidad Desplegable */
+        .privacy-section {
+            display: none;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .privacy-section h2 {
+            color: #4a3f91;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .privacy-section h3 {
+            color: #333;
+            margin: 25px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .privacy-section p, .privacy-section ul {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .privacy-section ul {
+            padding-left: 20px;
+        }
+
         /* Footer */
         footer {
             background-color: #222;
@@ -142,6 +176,7 @@
             color: #8d86c9;
             text-decoration: none;
             margin: 0 10px;
+            cursor: pointer;
         }
 
         footer a:hover {
@@ -154,7 +189,6 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-container">
-            <!-- Tu logotipo oficial renombrado -->
             <img src="LOGO.png" alt="Children Chat Logo" class="logo-img">
             <h1>La forma más segura y divertida de hablar con sus amigos</h1>
             <p>Una aplicación de mensajería diseñada exclusivamente para menores, con control parental total y un entorno 100% protegido de desconocidos.</p>
@@ -185,17 +219,61 @@
                 <p>Una aplicación limpia y segura. Sin banners publicitarios molestos ni riesgos de compras integradas sorpresa en la tarjeta.</p>
             </div>
         </div>
+
+        <!-- CONTENIDO DE LA POLÍTICA DE PRIVACIDAD (Desplegable) -->
+        <div id="privacyContent" class="privacy-section">
+            <h2>Política de Privacidad de Children Chat</h2>
+            <p><strong>Última actualización:</strong> 24 de junio de 2026</p>
+            <p>En Children Chat, la privacidad y la seguridad de los menores son nuestra máxima prioridad. Esta Política de Privacidad explica de forma clara y transparente cómo recopilamos, utilizamos y protegemos la información en nuestra aplicación de mensajería diseñada exclusivamente para menores de edad.</p>
+            
+            <h3>1. El Rol de los Padres y Tutores Legales</h3>
+            <p>Children Chat es un entorno seguro supervisado por adultos. La cuenta del menor debe ser gestionada y autorizada por su padre, madre o tutor legal. El sistema de comunicación funciona exclusivamente mediante invitaciones autorizadas por los padres a través de correo electrónico, impidiendo el contacto con usuarios desconocidos o no verificados.</p>
+            
+            <h3>2. Información que Recopilamos</h3>
+            <p>Para garantizar el funcionamiento óptimo y seguro de la plataforma, tratamos únicamente los siguientes datos:</p>
+            <ul>
+                <li><strong>Datos del Tutor/a:</strong> Correo electrónico de contacto para la gestión de invitaciones y control parental.</li>
+                <li><strong>Datos del Menor:</strong> Nombre de usuario (apodo o nombre de pila) para que sus amigos autorizados puedan identificarlo dentro de la app.</li>
+                <li><strong>Imagen de Perfil:</strong> Avatares ilustrados o imágenes personalizadas elegidas por el usuario para evitar la exposición de fotografías reales del menor en la red.</li>
+                <li><strong>Datos de Mensajería:</strong> Los mensajes de chat se transmiten en tiempo real de forma técnica y protegida para permitir la comunicación exclusiva entre los amigos enlazados.</li>
+            </ul>
+            
+            <h3>3. Uso de la Información</h3>
+            <p>Utilizamos los datos recopilados únicamente para prestar el servicio de mensajería privada entre los contactos autorizados, verificar y gestionar el sistema de invitaciones de amistad y garantizar la seguridad del entorno técnico.</p>
+            
+            <h3>4. Cero Publicidad y Datos de Terceros</h3>
+            <p>Children Chat no contiene ningún tipo de publicidad, banners ni rastreadores comerciales. Jamás venderemos, alquilaremos ni compartiremos los datos personales de los menores ni de sus tutores con terceras empresas con fines comerciales o de marketing.</p>
+            
+            <h3>5. Derechos de los Usuarios (Acceso y Supresión)</h3>
+            <p>Los padres o tutores legales pueden ejercer en cualquier momento los derechos de acceso, rectificación, limitación y supresión de los datos del menor. Si decide eliminar la cuenta, todos los datos asociados, mensajes y avatares se borrarán de forma definitiva de nuestros servidores de base de datos.</p>
+            
+            <h3>6. Contacto</h3>
+            <p>Para cualquier duda, reclamación o para ejercer sus derechos de privacidad, puede ponerse en contacto con nuestro equipo de soporte en: <strong>soporte@childrenchat.com</strong></p>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Children Chat. Todos los derechos reservados.</p>
         <p style="margin-top: 15px;">
-            <a href="#">Política de Privacidad</a> | 
+            <a onclick="togglePrivacy()">Política de Privacidad</a> | 
             <a href="#">Términos de Uso</a> | 
             <a href="mailto:soporte@childrenchat.com">Soporte: soporte@childrenchat.com</a>
         </p>
     </footer>
+
+    <!-- SCRIPT PARA DESPLEGAR PRIVACIDAD -->
+    <script>
+        function togglePrivacy() {
+            var content = document.getElementById("privacyContent");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+                content.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 
 </body>
 </html>
